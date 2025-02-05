@@ -1,0 +1,538 @@
+body {
+  width: 380px;
+  margin: 0;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-height: fit-content;
+  max-height: 600px;
+}
+
+/* Header Styles */
+.header {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 18px;
+  color: #2196F3;
+}
+
+.slogan {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.tabs {
+  display: flex;
+  gap: 5px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
+}
+
+.tab-button {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f8f9fa;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  background: #e9ecef;
+}
+
+.tab-button.active {
+  background: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+.tab-content {
+  display: none;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tab-content.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.placeholder-message {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+  background: #f8f9fa;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.save-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
+  padding: 10px 0;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input, select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.primary-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.primary-button:hover {
+  background-color: #45a049;
+}
+
+.filter-section {
+  margin-top: 5px;
+  position: sticky;
+  top: 150px;
+  background: white;
+  z-index: 1;
+  padding: 5px 0;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-controls input {
+  flex: 2;
+}
+
+.filter-controls select {
+  flex: 1;
+}
+
+.filter-links-spacer {
+  height: 1px;
+  background: #ddd;
+  margin: 10px 0;
+}
+
+.links-section {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Webkit browsers (Chrome, Safari) scrollbar styling */
+.links-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.links-section::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.links-section::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.links-section::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #eee;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.link-item:hover {
+  background-color: #f5f5f5;
+}
+
+.link-favicon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.link-content {
+  flex-grow: 1;
+}
+
+.link-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.link-description {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.link-tags {
+  font-size: 12px;
+  color: #4CAF50;
+}
+
+.button-group {
+  display: flex;
+  gap: 5px;
+}
+
+.copy-button, .delete-button {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  color: white;
+}
+
+.copy-button {
+  background-color: #2196F3;
+}
+
+.copy-button:hover {
+  background-color: #1976D2;
+}
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Colors Tab Styles */
+.color-input-section {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.color-picker-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.color-picker-group input[type="color"] {
+  width: 50px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.colors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.color-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.color-item:hover {
+  transform: scale(1.05);
+}
+
+.color-preview {
+  width: 100%;
+  height: 100%;
+}
+
+.color-hex {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 4px;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.color-item:hover .color-hex,
+.color-item:hover .color-actions {
+  opacity: 1;
+}
+
+.color-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.color-delete-button {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.7);
+  transition: all 0.2s;
+}
+
+.color-delete-button:hover {
+  background: rgba(220, 53, 69, 0.9);
+}
+
+.color-delete-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.copied-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.copied-tooltip.show {
+  opacity: 1;
+}
+
+/* Images Tab Styles */
+.image-input-section {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.image-input-section .input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.image-input-section input[type="url"] {
+  flex: 1;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 10px 0;
+  overflow-y: auto;
+}
+
+.image-item {
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f8f9fa;
+  padding: 8px;
+}
+
+.image-dimensions {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 4px 8px;
+  font-size: 11px;
+  border-radius: 3px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.image-item:hover .image-dimensions {
+  opacity: 1;
+}
+
+.image-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.image-item:hover .image-actions {
+  opacity: 1;
+}
+
+.copy-url-button,
+.delete-image-button {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.7);
+  transition: all 0.2s;
+}
+
+.copy-url-button svg,
+.delete-image-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.copy-url-button:hover {
+  background: rgba(33, 150, 243, 0.9);
+}
+
+.delete-image-button:hover {
+  background: rgba(220, 53, 69, 0.9);
+}
+
+/* Footer Styles */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 15px;
+  border-top: 1px solid #eee;
+  background: #f8f9fa;
+  z-index: 10;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-link {
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.social-link:hover {
+  color: #2196F3;
+  background: rgba(33, 150, 243, 0.1);
+}
+
+/* Adjust container for fixed footer */
+.container {
+  padding-bottom: 50px;
+}
+
+/* Adjust scrollable areas to not overlap with footer */
+.links-section,
+.colors-grid,
+.images-grid {
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}

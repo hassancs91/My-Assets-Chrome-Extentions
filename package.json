@@ -1,0 +1,34 @@
+{
+  "name": "my-assets",
+  "version": "1.0.0",
+  "description": "Chrome extension to save and organize links, colors, and images locally",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p dist && zip -r dist/my-assets.zip manifest.json popup/ icons/ README.md",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "chrome-extension",
+    "productivity",
+    "content-creation",
+    "asset-management",
+    "privacy"
+  ],
+  "author": {
+    "name": "Hasan Aboul Hasan",
+    "url": "https://learnwithhasan.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hasanabuhasan/my-assets"
+  },
+  "bugs": {
+    "url": "https://github.com/hasanabuhasan/my-assets/issues"
+  },
+  "homepage": "https://learnwithhasan.com",
+  "social": {
+    "twitter": "https://x.com/hasan_ab_hasan",
+    "linkedin": "https://www.linkedin.com/in/h-educate/"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "My Assets",
+  "version": "1.0.0",
+  "description": "Save and organize your writing assets: links, brand colors, and images. All data stored locally for privacy and quick access.",
+  "author": "Hasan Aboul Hasan",
+  "homepage_url": "https://learnwithhasan.com",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "clipboardWrite",
+    "downloads"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "offline_enabled": true,
+  "short_name": "My Assets"
+}

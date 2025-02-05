@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.zip
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Temporary files
+*.log
+*.tmp
+.cache/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Chrome Extension specific
+*.pem
+*.crx
+
+# Store assets working files
+store-assets/*.psd
+store-assets/*.ai
+store-assets/*.sketch
