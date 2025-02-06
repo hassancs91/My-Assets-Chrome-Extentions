@@ -4,8 +4,8 @@
   "description": "Chrome extension to save and organize links, colors, and images locally",
   "private": true,
   "scripts": {
-    "build": "mkdir -p dist && zip -r dist/my-assets.zip manifest.json popup/ icons/ README.md",
-    "clean": "rm -rf dist"
+    "build": "powershell -Command \"if (!(Test-Path dist)) { New-Item -ItemType Directory -Force -Path dist }; if (Test-Path dist/my-assets.zip) { Remove-Item dist/my-assets.zip }; Compress-Archive -Path manifest.json,popup,icons,README.md -DestinationPath dist/my-assets.zip\"",
+    "clean": "powershell -Command \"if (Test-Path dist) { Remove-Item -Recurse -Force dist }\""
   },
   "keywords": [
     "chrome-extension",
@@ -15,16 +15,16 @@
     "privacy"
   ],
   "author": {
-    "name": "Hasan Aboul Hasan",
+    "name": "Hasan Abuhasan",
     "url": "https://learnwithhasan.com"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hassancs91/My-Assets-Chrome-Extentions/my-assets"
+    "url": "https://github.com/hasanabuhasan/my-assets"
   },
   "bugs": {
-    "url": "https://github.com/hassancs91/My-Assets-Chrome-Extentions/issues"
+    "url": "https://github.com/hasanabuhasan/my-assets/issues"
   },
   "homepage": "https://learnwithhasan.com",
   "social": {
