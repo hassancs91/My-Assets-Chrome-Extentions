@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>My Assets Links</title>
   <link rel="stylesheet" href="popup.css">
 </head>
@@ -22,6 +23,7 @@
       <button class="tab-button active" data-tab="links">Links</button>
       <button class="tab-button" data-tab="colors">Colors</button>
       <button class="tab-button" data-tab="images">Images</button>
+      <button class="tab-button" data-tab="emojis">Emojis</button>
     </div>
 
     <div class="tab-content active" id="links-tab">
@@ -78,9 +80,42 @@
         <!-- Images will be added here dynamically -->
       </div>
     </div>
+
+    <div class="tab-content" id="emojis-tab">
+      <div class="emoji-favorites-section">
+        <h3 class="section-title">Favorites</h3>
+        <div class="emoji-input-group">
+          <input type="text" id="customEmoji" placeholder="Type or paste an emoji">
+          <button id="addCustomEmoji" class="primary-button">Add</button>
+        </div>
+        <div class="emoji-favorites-grid" id="emojiFavorites">
+          <!-- Favorite emojis will be added here dynamically -->
+        </div>
+      </div>
+
+      <div class="emoji-controls">
+        <input type="text" id="emojiSearch" placeholder="Search emojis...">
+        <select id="emojiCategory">
+          <option value="">All Categories</option>
+          <option value="smileys">Smileys & People</option>
+          <option value="animals">Animals & Nature</option>
+          <option value="food">Food & Drink</option>
+          <option value="activities">Activities</option>
+          <option value="travel">Travel & Places</option>
+          <option value="objects">Objects</option>
+          <option value="symbols">Symbols</option>
+          <option value="flags">Flags</option>
+        </select>
+      </div>
+
+      <div class="emoji-grid" id="emojiGrid">
+        <!-- Emojis will be added here dynamically -->
+      </div>
+    </div>
   </div>
 
   <footer class="footer">
+    <div class="version">v1.0</div>
     <div class="social-links">
       <a href="https://learnwithhasan.com" target="_blank" class="social-link" title="Developer Website">
         <svg viewBox="0 0 24 24" width="16" height="16">

@@ -1,3 +1,71 @@
+// Emoji data structure
+const emojiData = {
+  smileys: [
+    { emoji: '\u{1F600}', name: 'Grinning Face', keywords: ['smile', 'happy', 'joy'] },
+    { emoji: '\u{1F603}', name: 'Grinning Face with Big Eyes', keywords: ['happy', 'joy', 'smile'] },
+    //{ emoji: '\u{1F604}', name: 'Grinning Face with Smiling Eyes', keywords: ['happy', 'joy', 'laugh'] },
+    { emoji: '\u{1F60A}', name: 'Smiling Face with Smiling Eyes', keywords: ['happy', 'warm', 'sweet'] },
+    { emoji: '\u{1F970}', name: 'Smiling Face with Hearts', keywords: ['love', 'happy', 'affection'] },
+    { emoji: '\u{1F60E}', name: 'Smiling Face with Sunglasses', keywords: ['cool', 'sun', 'happy'] }
+  ],
+  animals: [
+    { emoji: '\u{1F436}', name: 'Dog Face', keywords: ['dog', 'pet', 'animal'] },
+    { emoji: '\u{1F431}', name: 'Cat Face', keywords: ['cat', 'pet', 'animal'] },
+    { emoji: '\u{1F981}', name: 'Lion', keywords: ['lion', 'animal', 'wild'] },
+    { emoji: '\u{1F43C}', name: 'Panda', keywords: ['panda', 'animal', 'cute'] },
+    { emoji: '\u{1F98A}', name: 'Fox', keywords: ['fox', 'animal', 'wild'] },
+    { emoji: '\u{1F984}', name: 'Unicorn', keywords: ['unicorn', 'magic', 'fantasy'] }
+  ],
+  food: [
+    { emoji: '\u{1F34E}', name: 'Red Apple', keywords: ['apple', 'fruit', 'food'] },
+    { emoji: '\u{1F355}', name: 'Pizza', keywords: ['pizza', 'food', 'italian'] },
+    { emoji: '\u{1F354}', name: 'Hamburger', keywords: ['burger', 'food', 'fast food'] },
+    { emoji: '\u{1F366}', name: 'Ice Cream', keywords: ['ice cream', 'dessert', 'sweet'] },
+    { emoji: '\u{1F36A}', name: 'Cookie', keywords: ['cookie', 'dessert', 'sweet'] },
+    { emoji: '\u{1F36B}', name: 'Chocolate Bar', keywords: ['chocolate', 'sweet', 'dessert'] }
+  ],
+  activities: [
+    { emoji: '\u{26BD}', name: 'Soccer Ball', keywords: ['soccer', 'football', 'sport'] },
+    { emoji: '\u{1F3AE}', name: 'Video Game', keywords: ['game', 'play', 'controller'] },
+    { emoji: '\u{1F3A8}', name: 'Artist Palette', keywords: ['art', 'paint', 'creative'] },
+    { emoji: '\u{1F3AD}', name: 'Performing Arts', keywords: ['theater', 'drama', 'arts'] },
+    { emoji: '\u{1F3AA}', name: 'Circus Tent', keywords: ['circus', 'carnival', 'festival'] },
+    { emoji: '\u{1F3AF}', name: 'Direct Hit', keywords: ['target', 'game', 'bull\'s eye'] }
+  ],
+  travel: [
+    { emoji: '\u{2708}\u{FE0F}', name: 'Airplane', keywords: ['plane', 'flight', 'travel'] },
+    { emoji: '\u{1F697}', name: 'Car', keywords: ['car', 'auto', 'vehicle'] },
+    { emoji: '\u{1F3D6}\u{FE0F}', name: 'Beach with Umbrella', keywords: ['beach', 'vacation', 'summer'] },
+    { emoji: '\u{1F5FD}', name: 'Statue of Liberty', keywords: ['liberty', 'new york', 'usa'] },
+    { emoji: '\u{1F5FC}', name: 'Tokyo Tower', keywords: ['tower', 'japan', 'tokyo'] },
+    { emoji: '\u{1F3F0}', name: 'Castle', keywords: ['castle', 'building', 'fairy tale'] }
+  ],
+  objects: [
+    { emoji: '\u{1F4F1}', name: 'Mobile Phone', keywords: ['phone', 'mobile', 'device'] },
+    { emoji: '\u{1F4BB}', name: 'Laptop', keywords: ['computer', 'tech', 'work'] },
+    { emoji: '\u{231A}', name: 'Watch', keywords: ['time', 'clock', 'accessory'] },
+    { emoji: '\u{1F4F7}', name: 'Camera', keywords: ['photo', 'picture', 'image'] },
+    { emoji: '\u{1F381}', name: 'Wrapped Gift', keywords: ['gift', 'present', 'birthday'] },
+    { emoji: '\u{1F4DA}', name: 'Books', keywords: ['book', 'read', 'library'] }
+  ],
+  symbols: [
+    { emoji: '\u{2764}\u{FE0F}', name: 'Red Heart', keywords: ['heart', 'love', 'like'] },
+    { emoji: '\u{2B50}', name: 'Star', keywords: ['star', 'rating', 'favorite'] },
+    { emoji: '\u{262E}\u{FE0F}', name: 'Peace Symbol', keywords: ['peace', 'harmony'] },
+    { emoji: '\u{262F}\u{FE0F}', name: 'Yin Yang', keywords: ['balance', 'tao', 'harmony'] },
+    { emoji: '\u{271D}\u{FE0F}', name: 'Latin Cross', keywords: ['cross', 'christian', 'religion'] },
+    { emoji: '\u{262A}\u{FE0F}', name: 'Star and Crescent', keywords: ['islam', 'muslim', 'religion'] }
+  ],
+  flags: [
+    { emoji: '\u{1F3C1}', name: 'Chequered Flag', keywords: ['finish', 'race', 'complete'] },
+    { emoji: '\u{1F6A9}', name: 'Triangular Flag', keywords: ['flag', 'mark', 'location'] },
+    { emoji: '\u{1F38C}', name: 'Crossed Flags', keywords: ['japan', 'nation', 'country'] },
+    { emoji: '\u{1F3F4}\u{200D}\u{2620}\u{FE0F}', name: 'Pirate Flag', keywords: ['pirate', 'skull', 'crossbones'] },
+    { emoji: '\u{1F3F3}\u{FE0F}\u{200D}\u{1F308}', name: 'Rainbow Flag', keywords: ['pride', 'lgbtq', 'rainbow'] },
+    { emoji: '\u{1F3F3}\u{FE0F}', name: 'White Flag', keywords: ['surrender', 'peace', 'truce'] }
+  ]
+};
+
 // Store DOM elements
 const saveButton = document.getElementById('saveCurrentPage');
 const descriptionInput = document.getElementById('description');
@@ -18,6 +86,14 @@ const imageUrlInput = document.getElementById('imageUrl');
 const addImageButton = document.getElementById('addImage');
 const imagesGrid = document.getElementById('imagesGrid');
 
+// Emoji tab elements
+const emojiSearch = document.getElementById('emojiSearch');
+const emojiCategory = document.getElementById('emojiCategory');
+const emojiGrid = document.getElementById('emojiGrid');
+const emojiFavorites = document.getElementById('emojiFavorites');
+const customEmojiInput = document.getElementById('customEmoji');
+const addCustomEmojiButton = document.getElementById('addCustomEmoji');
+
 // Tab switching functionality
 tabButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -36,6 +112,9 @@ tabButtons.forEach(button => {
       loadColors();
     } else if (activeTab === 'images') {
       loadImages();
+    } else if (activeTab === 'emojis') {
+      loadEmojis();
+      loadFavoriteEmojis();
     }
   });
 });
@@ -235,6 +314,177 @@ document.addEventListener('DOMContentLoaded', () => {
     loadColors();
   } else if (activeTab === 'images') {
     loadImages();
+  } else if (activeTab === 'emojis') {
+    loadEmojis();
+    loadFavoriteEmojis();
+  }
+});
+
+// Emoji functionality
+async function loadEmojis() {
+  const searchText = emojiSearch.value.toLowerCase();
+  const category = emojiCategory.value;
+  const { favoriteEmojis = [] } = await chrome.storage.local.get('favoriteEmojis');
+  
+  emojiGrid.innerHTML = '';
+  
+  // Get emojis based on category
+  const emojisToShow = category ? [category] : Object.keys(emojiData);
+  
+  emojisToShow.forEach(categoryKey => {
+    const categoryEmojis = emojiData[categoryKey].filter(emoji => {
+      if (!searchText) return true;
+      return emoji.name.toLowerCase().includes(searchText) ||
+             emoji.keywords.some(keyword => keyword.includes(searchText));
+    });
+    
+    categoryEmojis.forEach(emoji => {
+      const emojiElement = createEmojiElement(emoji, favoriteEmojis.includes(emoji.emoji));
+      emojiGrid.appendChild(emojiElement);
+    });
+  });
+}
+
+function createEmojiElement(emoji, isFavorite) {
+  const div = document.createElement('div');
+  div.className = 'emoji-item';
+  
+  div.innerHTML = `
+    ${emoji.emoji}
+    <div class="emoji-name-tooltip">${emoji.name}</div>
+    <button class="emoji-favorite-button ${isFavorite ? 'active' : ''}" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">
+      <svg viewBox="0 0 24 24" width="12" height="12">
+        <path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+      </svg>
+    </button>
+  `;
+  
+  // Add click-to-copy functionality
+  div.addEventListener('click', (e) => {
+    if (e.target.closest('.emoji-favorite-button')) return;
+    navigator.clipboard.writeText(emoji.emoji);
+    const tooltip = div.querySelector('.emoji-name-tooltip');
+    tooltip.textContent = 'Copied!';
+    setTimeout(() => {
+      tooltip.textContent = emoji.name;
+    }, 1500);
+  });
+
+  // Add favorite functionality
+  const favoriteButton = div.querySelector('.emoji-favorite-button');
+  favoriteButton.addEventListener('click', async () => {
+    const { favoriteEmojis = [] } = await chrome.storage.local.get('favoriteEmojis');
+    
+    if (isFavorite) {
+      const updatedFavorites = favoriteEmojis.filter(e => e !== emoji.emoji);
+      await chrome.storage.local.set({ favoriteEmojis: updatedFavorites });
+    } else {
+      favoriteEmojis.unshift(emoji.emoji);
+      await chrome.storage.local.set({ favoriteEmojis });
+    }
+    
+    loadEmojis();
+    loadFavoriteEmojis();
+  });
+  
+  return div;
+}
+
+async function loadFavoriteEmojis() {
+  const { favoriteEmojis = [] } = await chrome.storage.local.get('favoriteEmojis');
+  
+  emojiFavorites.innerHTML = '';
+  
+  if (favoriteEmojis.length === 0) {
+    const placeholder = document.createElement('div');
+    placeholder.className = 'placeholder-message';
+    placeholder.textContent = 'No favorite emojis yet';
+    emojiFavorites.appendChild(placeholder);
+    return;
+  }
+  
+  favoriteEmojis.forEach(emojiChar => {
+    const emojiData = findEmojiData(emojiChar);
+    let emojiElement;
+    if (emojiData) {
+      emojiElement = createEmojiElement(emojiData, true);
+    } else {
+      // Create element for custom emoji not in our predefined list
+      emojiElement = createCustomEmojiElement(emojiChar);
+    }
+    emojiFavorites.appendChild(emojiElement);
+  });
+}
+
+function findEmojiData(emojiChar) {
+  for (const category of Object.values(emojiData)) {
+    const found = category.find(e => e.emoji === emojiChar);
+    if (found) return found;
+  }
+  return null;
+}
+
+function createCustomEmojiElement(emoji) {
+  const div = document.createElement('div');
+  div.className = 'emoji-item';
+  
+  div.innerHTML = `
+    ${emoji}
+    <div class="emoji-name-tooltip">Custom Emoji</div>
+    <button class="emoji-favorite-button active" title="Remove from favorites">
+      <svg viewBox="0 0 24 24" width="12" height="12">
+        <path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+      </svg>
+    </button>
+  `;
+  
+  // Add click-to-copy functionality
+  div.addEventListener('click', (e) => {
+    if (e.target.closest('.emoji-favorite-button')) return;
+    navigator.clipboard.writeText(emoji);
+    const tooltip = div.querySelector('.emoji-name-tooltip');
+    tooltip.textContent = 'Copied!';
+    setTimeout(() => {
+      tooltip.textContent = 'Custom Emoji';
+    }, 1500);
+  });
+
+  // Add favorite functionality
+  const favoriteButton = div.querySelector('.emoji-favorite-button');
+  favoriteButton.addEventListener('click', async () => {
+    const { favoriteEmojis = [] } = await chrome.storage.local.get('favoriteEmojis');
+    const updatedFavorites = favoriteEmojis.filter(e => e !== emoji);
+    await chrome.storage.local.set({ favoriteEmojis: updatedFavorites });
+    loadFavoriteEmojis();
+  });
+  
+  return div;
+}
+
+// Add event listeners for emoji controls
+emojiSearch.addEventListener('input', loadEmojis);
+emojiCategory.addEventListener('change', loadEmojis);
+
+// Add custom emoji functionality
+addCustomEmojiButton.addEventListener('click', async () => {
+  const emoji = customEmojiInput.value.trim();
+  if (!emoji) return;
+
+  const { favoriteEmojis = [] } = await chrome.storage.local.get('favoriteEmojis');
+  
+  if (!favoriteEmojis.includes(emoji)) {
+    favoriteEmojis.unshift(emoji);
+    await chrome.storage.local.set({ favoriteEmojis });
+    loadFavoriteEmojis();
+  }
+  
+  customEmojiInput.value = '';
+});
+
+// Add enter key support for custom emoji input
+customEmojiInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    addCustomEmojiButton.click();
   }
 });
 
